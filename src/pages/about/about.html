@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Location
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-input type="text" placeholder="User UUID" [(ngModel)]="UUID"></ion-input>
+    </ion-item>      
+  </ion-list>
+  <button ion-button full (click)="UUIDconfirm()" class="btn btn-link">Confirm</button>
+  <p>{{UUIDmessage}}</p>
+  <span *ngIf="confirm ; then condition1 else condition2"></span>
+    <ng-template #condition1>
+      <button ion-button full (click)="getLocation()" class="btn btn-link">Get Location</button>
+    </ng-template>
+    <ng-template #condition2></ng-template>
+    <br>
+    <p>{{address}}</p>
+  <!-- <span *ngIf="isavailable; then condition1 else condition2">Condition is valid.</span>
+  <ng-template #condition1>Condition is valid</ng-template>
+  <ng-template #condition2>Condition is invalid</ng-template> -->
+</ion-content>
+
